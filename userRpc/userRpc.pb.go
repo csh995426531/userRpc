@@ -102,23 +102,115 @@ func (m *Response) GetPong() string {
 	return ""
 }
 
+type InfoRequest struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *InfoRequest) Reset()         { *m = InfoRequest{} }
+func (m *InfoRequest) String() string { return proto.CompactTextString(m) }
+func (*InfoRequest) ProtoMessage()    {}
+func (*InfoRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_81606aee45e8fb71, []int{2}
+}
+
+func (m *InfoRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_InfoRequest.Unmarshal(m, b)
+}
+func (m *InfoRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_InfoRequest.Marshal(b, m, deterministic)
+}
+func (m *InfoRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_InfoRequest.Merge(m, src)
+}
+func (m *InfoRequest) XXX_Size() int {
+	return xxx_messageInfo_InfoRequest.Size(m)
+}
+func (m *InfoRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_InfoRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_InfoRequest proto.InternalMessageInfo
+
+func (m *InfoRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type InfoResponse struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Name                 string   `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *InfoResponse) Reset()         { *m = InfoResponse{} }
+func (m *InfoResponse) String() string { return proto.CompactTextString(m) }
+func (*InfoResponse) ProtoMessage()    {}
+func (*InfoResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_81606aee45e8fb71, []int{3}
+}
+
+func (m *InfoResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_InfoResponse.Unmarshal(m, b)
+}
+func (m *InfoResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_InfoResponse.Marshal(b, m, deterministic)
+}
+func (m *InfoResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_InfoResponse.Merge(m, src)
+}
+func (m *InfoResponse) XXX_Size() int {
+	return xxx_messageInfo_InfoResponse.Size(m)
+}
+func (m *InfoResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_InfoResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_InfoResponse proto.InternalMessageInfo
+
+func (m *InfoResponse) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *InfoResponse) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
 func init() {
 	proto.RegisterType((*Request)(nil), "userRpc.Request")
 	proto.RegisterType((*Response)(nil), "userRpc.Response")
+	proto.RegisterType((*InfoRequest)(nil), "userRpc.InfoRequest")
+	proto.RegisterType((*InfoResponse)(nil), "userRpc.InfoResponse")
 }
 
 func init() { proto.RegisterFile("userRpc.proto", fileDescriptor_81606aee45e8fb71) }
 
 var fileDescriptor_81606aee45e8fb71 = []byte{
-	// 124 bytes of a gzipped FileDescriptorProto
+	// 184 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2d, 0x2d, 0x4e, 0x2d,
 	0x0a, 0x2a, 0x48, 0xd6, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x87, 0x72, 0x95, 0x64, 0xb9,
 	0xd8, 0x83, 0x52, 0x0b, 0x4b, 0x53, 0x8b, 0x4b, 0x84, 0x84, 0xb8, 0x58, 0x0a, 0x32, 0xf3, 0xd2,
 	0x25, 0x18, 0x15, 0x18, 0x35, 0x38, 0x83, 0xc0, 0x6c, 0x25, 0x39, 0x2e, 0x8e, 0xa0, 0xd4, 0xe2,
-	0x82, 0xfc, 0xbc, 0xe2, 0x54, 0xb0, 0x7c, 0x3e, 0x92, 0x7c, 0x7e, 0x5e, 0xba, 0x91, 0x19, 0x17,
-	0x7b, 0x28, 0xc4, 0x24, 0x21, 0x6d, 0x2e, 0x96, 0x80, 0xcc, 0xbc, 0x74, 0x21, 0x01, 0x3d, 0x98,
-	0x55, 0x50, 0x83, 0xa5, 0x04, 0x91, 0x44, 0x20, 0x66, 0x25, 0xb1, 0x81, 0x9d, 0x61, 0x0c, 0x08,
-	0x00, 0x00, 0xff, 0xff, 0x50, 0x93, 0x28, 0x1b, 0x97, 0x00, 0x00, 0x00,
+	0x82, 0xfc, 0xbc, 0xe2, 0x54, 0xb0, 0x7c, 0x3e, 0x92, 0x7c, 0x7e, 0x5e, 0xba, 0x92, 0x2c, 0x17,
+	0xb7, 0x67, 0x5e, 0x5a, 0x3e, 0xcc, 0x08, 0x3e, 0x2e, 0x26, 0xcf, 0x14, 0xa8, 0x02, 0x26, 0xcf,
+	0x14, 0x25, 0x23, 0x2e, 0x1e, 0x88, 0x34, 0xd4, 0x08, 0x34, 0x79, 0x90, 0x91, 0x7e, 0x89, 0xb9,
+	0xa9, 0x12, 0x4c, 0x10, 0x23, 0x41, 0x6c, 0xa3, 0x6c, 0x2e, 0xf6, 0x50, 0x88, 0xe3, 0x84, 0xb4,
+	0xb9, 0x58, 0x02, 0x32, 0xf3, 0xd2, 0x85, 0x04, 0xf4, 0x60, 0xae, 0x87, 0x5a, 0x24, 0x25, 0x88,
+	0x24, 0x02, 0x35, 0xdb, 0x98, 0x8b, 0x05, 0x64, 0x97, 0x90, 0x08, 0x5c, 0x0a, 0xc9, 0x65, 0x52,
+	0xa2, 0x68, 0xa2, 0x10, 0x4d, 0x49, 0x6c, 0xe0, 0xe0, 0x30, 0x06, 0x04, 0x00, 0x00, 0xff, 0xff,
+	0x51, 0xf8, 0x42, 0x38, 0x1f, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -134,6 +226,7 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type UserRpcClient interface {
 	Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	Info(ctx context.Context, in *InfoRequest, opts ...grpc.CallOption) (*InfoResponse, error)
 }
 
 type userRpcClient struct {
@@ -153,9 +246,19 @@ func (c *userRpcClient) Ping(ctx context.Context, in *Request, opts ...grpc.Call
 	return out, nil
 }
 
+func (c *userRpcClient) Info(ctx context.Context, in *InfoRequest, opts ...grpc.CallOption) (*InfoResponse, error) {
+	out := new(InfoResponse)
+	err := c.cc.Invoke(ctx, "/userRpc.UserRpc/Info", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserRpcServer is the server API for UserRpc service.
 type UserRpcServer interface {
 	Ping(context.Context, *Request) (*Response, error)
+	Info(context.Context, *InfoRequest) (*InfoResponse, error)
 }
 
 // UnimplementedUserRpcServer can be embedded to have forward compatible implementations.
@@ -164,6 +267,9 @@ type UnimplementedUserRpcServer struct {
 
 func (*UnimplementedUserRpcServer) Ping(ctx context.Context, req *Request) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
+}
+func (*UnimplementedUserRpcServer) Info(ctx context.Context, req *InfoRequest) (*InfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Info not implemented")
 }
 
 func RegisterUserRpcServer(s *grpc.Server, srv UserRpcServer) {
@@ -188,6 +294,24 @@ func _UserRpc_Ping_Handler(srv interface{}, ctx context.Context, dec func(interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserRpc_Info_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserRpcServer).Info(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/userRpc.UserRpc/Info",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserRpcServer).Info(ctx, req.(*InfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _UserRpc_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "userRpc.UserRpc",
 	HandlerType: (*UserRpcServer)(nil),
@@ -195,6 +319,10 @@ var _UserRpc_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Ping",
 			Handler:    _UserRpc_Ping_Handler,
+		},
+		{
+			MethodName: "Info",
+			Handler:    _UserRpc_Info_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

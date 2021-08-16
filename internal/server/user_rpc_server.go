@@ -25,3 +25,8 @@ func (s *UserRpcServer) Ping(ctx context.Context, in *userRpc.Request) (*userRpc
 	l := logic.NewPingLogic(ctx, s.svcCtx)
 	return l.Ping(in)
 }
+
+func (s *UserRpcServer) Info(ctx context.Context, in *userRpc.InfoRequest) (*userRpc.InfoResponse, error) {
+	l := logic.NewInfoLogic(ctx, s.svcCtx)
+	return l.Info(in)
+}
