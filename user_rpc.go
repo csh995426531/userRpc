@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"userRpc/internal/config"
-	"userRpc/internal/server"
-	"userRpc/internal/svc"
-	"userRpc/userRpc"
+	"subModule/userRpc/internal/config"
+	"subModule/userRpc/internal/server"
+	"subModule/userRpc/internal/svc"
+	"subModule/userRpc/userRpc"
 
 	"github.com/tal-tech/go-zero/core/conf"
 	"github.com/tal-tech/go-zero/zrpc"

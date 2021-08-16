@@ -189,13 +189,13 @@ func (m *InfoResponse) GetName() string {
 }
 
 func init() {
-	proto.RegisterType((*Request)(nil), "userRpc.Request")
-	proto.RegisterType((*Response)(nil), "userRpc.Response")
-	proto.RegisterType((*InfoRequest)(nil), "userRpc.InfoRequest")
-	proto.RegisterType((*InfoResponse)(nil), "userRpc.InfoResponse")
+	proto.RegisterType((*Request)(nil), "subModule/userRpc.Request")
+	proto.RegisterType((*Response)(nil), "subModule/userRpc.Response")
+	proto.RegisterType((*InfoRequest)(nil), "subModule/userRpc.InfoRequest")
+	proto.RegisterType((*InfoResponse)(nil), "subModule/userRpc.InfoResponse")
 }
 
-func init() { proto.RegisterFile("userRpc.proto", fileDescriptor_81606aee45e8fb71) }
+func init() { proto.RegisterFile("subModule/userRpc.proto", fileDescriptor_81606aee45e8fb71) }
 
 var fileDescriptor_81606aee45e8fb71 = []byte{
 	// 184 bytes of a gzipped FileDescriptorProto
@@ -313,7 +313,7 @@ func _UserRpc_Info_Handler(srv interface{}, ctx context.Context, dec func(interf
 }
 
 var _UserRpc_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "userRpc.UserRpc",
+	ServiceName: "subModule/userRpc.UserRpc",
 	HandlerType: (*UserRpcServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -326,5 +326,5 @@ var _UserRpc_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "userRpc.proto",
+	Metadata: "subModule/userRpc.proto",
 }

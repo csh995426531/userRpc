@@ -8,7 +8,7 @@ package userrpcclient
 import (
 	"context"
 
-	"userRpc/userRpc"
+	"subModule/userRpc/userRpc"
 
 	"github.com/tal-tech/go-zero/zrpc"
 )
